@@ -20,7 +20,6 @@ jobs:
       id: changed-files
       uses: tj-actions/changed-files@v37
       with:
-        files_ignore: test_assets/NormalTextureBiasAndScale.usda
         files: |
           **/*.usd*
         
@@ -45,7 +44,12 @@ jobs:
 
     - name: Run usdchecker on changed USD files
       run: |
+        while IFS= read -r skip_file; do
+          SKIP_FILES+=("$skip_file")
+        done < .skip-usdchecker-files
+        
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo $file
+          if [[ ! " ${SKIP_FILES[@]} " =~ " ${file} " ]]; then
             usdchecker $file
+          fi
         done
