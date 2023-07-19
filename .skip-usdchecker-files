@@ -1,5 +1,5 @@
-test_assets/NormalTextureBiasAndScale.usdz
-test_assets/NormalTextureBiasAndScale.usda
+test_assets/NormalTextureBiasAndScale/NormalTextureBiasAndScale.usdz
+test_assets/NormalTextureBiasAndScale/NormalTextureBiasAndScale.usda
 test_assets/foundation/stage_composition/subLayer/sublayer_invalid.usda
 test_assets/foundation/stage_composition/references/reference_invalid.usda
 test_assets/foundation/stage_composition/payload/payload_invalid.usda
