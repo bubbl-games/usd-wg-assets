@@ -45,6 +45,7 @@ jobs:
     - name: Run usdchecker on changed USD files
       run: |
         while IFS= read -r skip_file; do
+          echo adding file $skip_file
           SKIP_FILES+=("$skip_file")
         done < .skip-usdchecker-files
         
