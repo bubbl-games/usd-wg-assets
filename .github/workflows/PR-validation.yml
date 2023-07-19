@@ -50,7 +50,9 @@ jobs:
         done < .skip-usdchecker-files
         
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo file to check $file
           if [[ ! " ${SKIP_FILES[@]} " =~ " ${file} " ]]; then
+            echo passed check $file
             usdchecker $file
           fi
         done
