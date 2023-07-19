@@ -20,10 +20,10 @@ jobs:
       id: changed-files
       uses: tj-actions/changed-files@v37
       with:
+        files_ignore: test_assets/NormalTextureBiasAndScale.usda
         files: |
           **/*.usd*
-        files_ignore_from_source_file: .skip-usdchecker-files
-
+        
     - name: Download USD binaries
       run: curl -o USD.zip -L https://developer.nvidia.com/downloads/usdusdbinaries2211usdpy37linu-8664usdviewrelease02211-tc55v22110c7b9a95zip
 
